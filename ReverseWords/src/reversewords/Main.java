@@ -1,4 +1,4 @@
-package sequencetransformation;
+package reversewords;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -7,14 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * There are two sequences. The first sequence consists of digits "0" and "1", 
- * the second one consists of letters "A" and "B". The challenge is to determine 
- * whether it's possible to transform a given binary sequence into a string sequence 
- * using the following rules:
- * 1. "0" can be transformed into non empty sequence of letters "A" ("A", "AA", "AAA" etc.)
- * 2. "1" can be transformed into non empty sequence of letters "A" ("A", "AA", "AAA" etc.) 
- *                          or to non empty sequence of letters "B" ("B", "BB", "BBB" etc)
- * For each test case print out "Yes" if the transformation is possible, otherwise print "No".
+ * Write a program to reverse the words of an input sentence. 
+ * The first argument will be a path to a filename containing multiple sentences, one per line. 
+ * Possibly empty lines too. 
  * 
  * @author Daniel Horobeanu <horobeanu@yahoo.com>
  */
@@ -31,11 +26,21 @@ public class Main {
             BufferedReader br = new BufferedReader(isr);
             String currentLine = "";
             while((currentLine=br.readLine()) != null) {
+                if (currentLine.length() == 0) {
+                    continue;
+                }
                 String[] data = currentLine.split(" ");
-                String digits = data[0];
-                String letters = data[1];
-                // to do
+                int N = data.length-1;
+                for (int i=N; i>=0; i--) {
+                    System.out.print(data[i]);
+                    if (i != 0) {
+                        System.out.print(" ");
+                    }
+                }
                 System.out.println("");
+                    
+               
+                
             }
             br.close();
         } catch (Exception ex) {
