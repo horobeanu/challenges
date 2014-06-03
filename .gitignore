@@ -1,5 +1,2 @@
-/FizzBuzz/nbproject/private/
-/FizzBuzz/build/
-/DataRecovery/nbproject/private/
-/DataRecovery/build/
-/SequenceTransformation/nbproject/private/
+nbproject
+build
